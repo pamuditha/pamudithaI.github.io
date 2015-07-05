@@ -10886,15 +10886,21 @@ paper-menu a {
 
 </script>
 <dom-module id="mailchimp-subscribe" assetpath="mailchimp-subscribe/">
-  <style media="screen">
+  <style>
     paper-button.colorful {
       color: #fff;
     }
 
     paper-input-container {
+      max-width: 768px;
       --paper-input-container-color: #fff;
       --paper-input-container-focus-color: #fff;
       --paper-input-container-input-color: #fff;
+    }
+    @media (min-width: 768px) {
+      paper-input-container {
+        min-width: 400px
+      }
     }
 
     .mc_embed_signup {
@@ -10903,7 +10909,6 @@ paper-menu a {
 
     .note-text {
       text-align: center;
-      margin-top: 15px;
       font-size: .8em;
     }
   </style>
@@ -10917,7 +10922,7 @@ paper-menu a {
             <paper-input-error>Plese enter valid email address</paper-input-error>
           </paper-input-container>
           <paper-button class="colorful self-end" on-click="submitForm">Submit</paper-button>
-          <span class="note-text">Registration will be open around end of August. Number of tickets are limited. Stay tuned!</span>
+          <span class="note-text">Subscribe for updates!</span>
         </div>
         
         <div style="position: absolute; left: -5000px;">
@@ -10933,7 +10938,6 @@ paper-menu a {
     (function() {
       Polymer({
         is: 'mailchimp-subscribe',
-
         properties: {
           url: String,
           name: String
