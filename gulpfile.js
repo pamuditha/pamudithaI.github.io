@@ -20,6 +20,7 @@ var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
 var glob = require('glob');
+var ghPages = require('gulp-gh-pages');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -175,6 +176,13 @@ gulp.task('precache', function (callback) {
   });
 });
 
+gulp.task('gh-pages', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages({
+      remoteUrl: 'https://github.com/ozasadnyy/devfest-ukraine-15'
+    }));
+});
+
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
@@ -211,6 +219,12 @@ gulp.task('serve:dist', ['default'], function () {
     // https: true,
     server: 'dist'
   });
+});
+
+// Deploy on github
+gulp.task('deploy', ['default'], function (cb) {
+  runSequence('gh-pages',
+    cb);
 });
 
 // Build Production Files, the Default Task

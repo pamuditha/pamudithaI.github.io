@@ -24,7 +24,7 @@ a {
   margin: 0;
 }
 .conf-name {
-  font-size: 3.5em;
+  font-size: 2.5em;
   line-height: 1;
   font-weight: 100;
 }
@@ -45,7 +45,16 @@ a {
   border: 0 none;
   height: 1px;
 }
-.sponsorship-prop {
-  color: rgba(255, 255, 255, 0.85);
+.inline-list {
+  padding: 0;
+}
+.inline-list li {
+  display: inline-block;
   font-size: .8em;
+}
+.inline-list a {
+  color: rgba(255, 255, 255, 0.85);
+}
+.bullet {
+  margin: 0 3px;
 }
