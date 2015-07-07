@@ -65,10 +65,33 @@
       <ul class="inline-list">
         <li>Contact us: <a href="mailto:devfest@gdg.org.ua">devfest@gdg.org.ua</a></li>
       </ul>
+      <paper-fab class="play-video" icon="av:play-arrow" role="button" on-tap="playVideo"></paper-fab>
+      <template is="dom-if" if="{{fullscreenVideoActive}}" restamp="true">
+        <paper-toolbar class="navbar-overlay fit">
+          <paper-icon-button icon="icons:arrow-back" on-tap="closeVideoCard"></paper-icon-button>
+          <div class="title text-left">GDG DevFest Ukraine 2014 - Highlights</div>
+        </paper-toolbar>
+        <div class="fullvideo-container fit">
+          <google-youtube video-id="t95z_HLMTmM" fluid="true" autohide="1" state="{{state}}" chromeless="true" autoplay="1"></google-youtube>
+        </div>
+      </template>
     </div>
-
   </template>
+  <script type="text/javascript">
+    (function() {
+      'use strict';
+      var app = document.querySelector('#app');
+      app.fullscreenVideoActive = false;
 
+      app.playVideo = function(e, detail, sender) {
+        app.fullscreenVideoActive = true;
+      };
+
+      app.closeVideoCard = function(e, detail, sender) {
+        app.fullscreenVideoActive = false;
+      };
+    })();
+  </script>
 </body>
 
 </html>

@@ -71,3 +71,24 @@ a {
 .bullet {
   margin: 0 3px;
 }
+.fullvideo-container {
+    z-index: 6;
+    overflow: hidden;
+    transform-origin: 0 0;
+    will-change: transform;
+}
+.play-video {
+  transform: translateY(90px);
+}
+.navbar-overlay {
+    position: fixed !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    text-transform: uppercase;
+    z-index: 9;
+    transition: transform 400ms cubic-bezier(0, 0, 0.2, 1);
+    will-change: transform;
+    /*transform: translateY(-100%);
+    &.active {*/
+        transform: translateY(0);
+    /*}*/
+}
