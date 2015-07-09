@@ -119,6 +119,13 @@ gulp.task('fonts', function () {
     .pipe($.size({title: 'fonts'}));
 });
 
+// Copy Web Videos To Dist
+gulp.task('videos', function () {
+  return gulp.src(['app/videos/**'])
+    .pipe(gulp.dest('dist/videos'))
+    .pipe($.size({title: 'videos'}));
+});
+
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'dist']});
@@ -207,6 +214,7 @@ gulp.task('serve', ['styles', 'elements', 'images'], function () {
   gulp.watch(['app/elements/**/*.{css}'], ['elements', reload]);
   gulp.watch(['app/{scripts,elements}/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/videos/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
@@ -232,7 +240,7 @@ gulp.task('default', ['clean'], function (cb) {
   runSequence(
     ['copy', 'styles'],
     'elements',
-    ['jshint', 'images', 'fonts', 'html'],
+    ['jshint', 'images', 'fonts', 'videos', 'html'],
     'vulcanize', 'precache',
     cb);
 });
