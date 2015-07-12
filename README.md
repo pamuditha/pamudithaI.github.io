@@ -30,6 +30,14 @@ $ gulp
 
 Build and optimize the current project, ready for deployment. This includes linting as well as vulcanization, image, script, stylesheet and HTML optimization and minification.
 
+
+### Deploy
+
+```sh
+$ gulp deploy
+```
+Deploy site into https://github.com/GDG-Ukraine/devfest.gdg.org.ua
+
 ## Application Theming
 
 Polymer 1.0 introduces a shim for CSS custom properties. We take advantage of this in `app/elements/app-theme.html` to provide theming for your application. You can also find our presets for Material Design breakpoints in this file.
