@@ -1,14 +1,14 @@
 {
-  "name": "polymer-starter-kit",
-  "version": "0.0.0",
-  "license": "http://polymer.github.io/LICENSE.txt",
+  "name": "devfest-ukraine-2015",
+  "version": "0.0.1",
   "dependencies": {
     "iron-elements": "PolymerElements/iron-elements#1.0.0",
     "paper-elements": "PolymerElements/paper-elements#1.0.1",
     "platinum-elements": "PolymerElements/platinum-elements#1.0.0",
     "neon-elements": "PolymerElements/neon-elements#1.0.0",
     "page": "visionmedia/page.js#~1.6.3",
-    "google-youtube": "^1.1.2"
+    "google-youtube": "^1.1.2",
+    "google-analytics": "GoogleWebComponents/google-analytics#^1.0.0"
   },
   "devDependencies": {
     "web-component-tester": "*",
