@@ -28,6 +28,13 @@ This runs the unit tests defined in the `app/test` directory through [web-compon
 $ gulp
 ```
 
+### Deploy
+
+```sh
+$ gulp deploy
+```
+
+
 Build and optimize the current project, ready for deployment. This includes linting as well as vulcanization, image, script, stylesheet and HTML optimization and minification.
 
 ## Application Theming
