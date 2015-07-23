@@ -112,3 +112,7 @@ a {
   background: url(../images/background_1.jpg) no-repeat;
   background-size: cover;
 }
+#videoDialog > * {
+  margin: 0;
+  padding: 0;
+}
